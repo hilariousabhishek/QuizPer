@@ -1,15 +1,16 @@
 import React from 'react';
 
 const SSC_JE = () => {
+  var db = 'ssc' ;
   const examPapers = [
     {
       title: "SSC JE morning paper 2023",
-      attemptLink: "/ssc_je_civil/ssc_je_2022",
+      attemptLink: `/${db}/ssc_je_2022`,
       downloadLink: "/download"
     },
     {
       title: "SSC JE Pre 16 OCT morning paper 2022",
-      attemptLink: "/ssc/ssc_je_civil_pre_16_11_2022_s1",
+      attemptLink: `/${db}/ssc_je_civil_pre_16_11_2022_s1`,
       downloadLink: "/download"
     }
     // Add more papers as needed
@@ -37,7 +38,7 @@ const SSC_JE = () => {
                   </a>
                   <a
                     className="btn btn-outline-success mr-2"
-                    href={paper.attemptLink}
+                    href={`${paper.attemptLink}`}
                     target='_blank'
                     rel="noopener noreferrer"
                     aria-label={`Attempt ${paper.title}`}

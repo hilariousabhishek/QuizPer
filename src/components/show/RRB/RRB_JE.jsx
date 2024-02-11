@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RRB_JE = () => {
-  var db = 'rrb_je_civil' ;
+  var db = 'rrb' ;
 
   const examPapers = [
     {
