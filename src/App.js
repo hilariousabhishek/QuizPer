@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/:dbName/:attemptLink' element={<Quiz/>} />
+        <Route path='/quiz' element={<Quiz/>} />
         <Route path='/QuizResult' element={<QuizResult />} />
 
         { RRBRoute} { SSCRoute }
