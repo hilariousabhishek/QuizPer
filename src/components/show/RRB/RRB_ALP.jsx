@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RRB_ALP = () => {
   const examPapers = [
@@ -28,9 +29,23 @@ const RRB_ALP = () => {
               {examPapers.map((paper, index) => (
                 <li key={index}>
                   {paper.title}
-                  <a className="btn btn-outline-primary" href={paper.downloadLink} >Download</a>
-                  <a className="btn btn-outline-success mr-2" href={paper.attemptLink} target='_blank' rel="noopener noreferrer">Attempt</a>
-                  <hr/>
+                  <Link
+                    to={paper.downloadLink}
+                    className="btn btn-outline-primary"
+                    aria-label={`Download ${paper.title}`}
+                  >
+                    Download
+                  </Link>
+                  <Link
+                    to={paper.attemptLink}
+                    className="btn btn-outline-success mr-2"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    aria-label={`Attempt ${paper.title}`}
+                  >
+                    Attempt
+                  </Link>
+                  <hr />
                 </li>
               ))}
             </ol>

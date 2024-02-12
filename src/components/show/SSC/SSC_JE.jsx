@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SSC_JE = () => {
-  var db = 'ssc' ;
+  const db = 'ssc';
   const examPapers = [
     {
-      title: "SSC JE morning paper 2023",
+      title: "SSC JE morning paper 2022",
       attemptLink: `/${db}/ssc_je_2022`,
       downloadLink: "/download"
     },
@@ -29,21 +30,22 @@ const SSC_JE = () => {
               {examPapers.map((paper, index) => (
                 <li key={index}>
                   {paper.title}
-                  <a
+                  <Link
+                    to={paper.downloadLink}
                     className="btn btn-outline-primary"
-                    href={paper.downloadLink}
                     aria-label={`Download ${paper.title}`}
                   >
                     Download
-                  </a>
-                  <a
+                  </Link>
+                  <Link
+                    to={paper.attemptLink}
                     className="btn btn-outline-success mr-2"
-                    href={`${paper.attemptLink}`}
+                    target='_blank'
                     rel="noopener noreferrer"
                     aria-label={`Attempt ${paper.title}`}
                   >
                     Attempt
-                  </a>
+                  </Link>
                   <hr />
                 </li>
               ))}

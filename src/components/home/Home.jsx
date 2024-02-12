@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//header and footer
+import Navbar from '../section/navbar';
+import Footer from '../section/footer'; 
+
 import ad from './assets/icon/ad.gif';
 
 import ssc from './assets/img/ssc.png';
@@ -15,7 +19,8 @@ import dda from './assets/img/dda.png';
 const Card = ({ imgSrc, avatarSrc, title }) => {
   return (
 
-    <Link to={`/Show/${title}`}>
+    <Link to={`/Show/${title}`}>  
+ 
     <div className='card data'>
       <img className='card-img-top cardImg'  src={imgSrc} alt='Card' />
       <div className='card-body text-center'>
@@ -23,6 +28,7 @@ const Card = ({ imgSrc, avatarSrc, title }) => {
         <h4 className='card-title'>{title}</h4>
       </div>
     </div>
+
     </Link>
   );
 };
@@ -45,43 +51,38 @@ const Home = () => {
       imgSrc: dda,
       avatarSrc: dda,
       title: 'DDA',
-      subtitle: 'Famous Actor',
     },
     {
       imgSrc: epfo,
       avatarSrc: epfo,
       title: 'EPFO',
-      subtitle: 'Famous Actor',
   },
     {
       imgSrc: esic,
       avatarSrc: esic,
       title: 'ESIC',
-      subtitle: 'Famous Actor',
    },
     {
       imgSrc: aai,
       avatarSrc: aai,
       title: 'AAI',
-      subtitle: 'Famous Actor',
    },
     {
       imgSrc: isro,
       avatarSrc: isro,
       title: 'ISRO',
-      subtitle: 'Famous Actor',
       },
     {
       imgSrc: upsc,
       avatarSrc: upsc,
       title: 'UPSC',
-      subtitle: 'Famous Actor',
     },
 
   ];
 
   return (
     <div className='container-fluid'>
+      <Navbar />
       <div className='row'>
         <div className='col-lg-3 text-center'>
           <img src={ad} className='ad' alt='ad' />
@@ -111,6 +112,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
