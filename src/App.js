@@ -14,10 +14,10 @@ function App() {
   return (
     <div className='container-fluid'>
   
-      <Routes>
+      <Routes basename = "/">
 
         <Route path='/' element={<Home />} />
-        <Route path='/:dbName/:attemptLink' element={<Quiz/>} />
+        <Route path='/Quiz/:dbName/:attemptLink' element={<Quiz/>} />
         <Route path='/QuizResult' element={<QuizResult />} />
         <Route path="*" element= {<Error/>} />
         {RRBRoute} { SSCRoute }

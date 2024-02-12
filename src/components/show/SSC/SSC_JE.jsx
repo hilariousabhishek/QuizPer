@@ -5,13 +5,13 @@ const SSC_JE = () => {
   const db = 'ssc';
   const examPapers = [
     {
-      title: "SSC JE morning paper 2022",
-      attemptLink: `/${db}/ssc_je_2022`,
+      title: "SSC JE morning paper 2023",
+      attemptLink: `/Quiz/${db}/ssc_je_2022`,
       downloadLink: "/download"
     },
     {
       title: "SSC JE Pre 16 OCT morning paper 2022",
-      attemptLink: `/${db}/ssc_je_civil_pre_16_11_2022_s1`,
+      attemptLink: `/Quiz/${db}/ssc_je_civil_pre_16_11_2022_s1`,
       downloadLink: "/download"
     }
     // Add more papers as needed
