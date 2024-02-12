@@ -39,7 +39,6 @@ const SSC_JE = () => {
                   <a
                     className="btn btn-outline-success mr-2"
                     href={`${paper.attemptLink}`}
-                    target='_blank'
                     rel="noopener noreferrer"
                     aria-label={`Attempt ${paper.title}`}
                   >
