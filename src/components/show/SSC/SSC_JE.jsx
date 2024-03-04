@@ -6,49 +6,61 @@ const SSC_JE = () => {
   const examPapers = [
     {
       title: "SSC JE morning paper 2023",
-      attemptLink: `/Quiz/${db}/ssc_je_2022`,
+      attemptLink: `/${db}/ssc_je_2022`,
       downloadLink: "/download"
     },
     {
       title: "SSC JE Pre 16 OCT morning paper 2022",
-      attemptLink: `/Quiz/${db}/ssc_je_civil_pre_16_11_2022_s1`,
+      attemptLink: `/${db}/ssc_je_civil_pre_16_11_2022_s1`,
       downloadLink: "/download"
-    }
+    },
     // Add more papers as needed
   ];
 
   return (
     <div className="modal fade ssc_je" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-dialog modal-xl modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">SSC JE</h5>
+            <h4 className="modal-title" id="exampleModalLabel">SSC JE</h4>
           </div>
 
-          <div className="modal-body">
-            <ol className='y2023'>
+          <div className="modal-body ">
+            <ol >
+
               {examPapers.map((paper, index) => (
-                <li key={index}>
-                  {paper.title}
-                  <Link
-                    to={paper.downloadLink}
-                    className="btn btn-outline-primary"
-                    aria-label={`Download ${paper.title}`}
-                  >
-                    Download
-                  </Link>
-                  <Link
-                    to={paper.attemptLink}
-                    className="btn btn-outline-success mr-2"
-                    target='_blank'
-                    rel="noopener noreferrer"
-                    aria-label={`Attempt ${paper.title}`}
-                  >
-                    Attempt
-                  </Link>
-                  <hr />
-                </li>
-              ))}
+                <div className="wrapper">
+                  <li key={index} className='mb-2 ' >
+
+                    <div className='flexing1'>
+                      {paper.title}
+                    </div>
+
+                    <div className='flexing2'>
+                      <Link
+                        to={paper.downloadLink}
+                        className="btn btn-outline-primary"
+                        aria-label={`Download ${paper.title}`}
+                      >
+                        Download
+                      </Link>
+
+                      <Link
+                        to={paper.attemptLink}
+                        className="btn btn-outline-success mr-2 "
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        aria-label={`Attempt ${paper.title}`}
+                      >
+                        Attempt
+                      </Link>
+                    </div>
+             
+                  </li>  
+                </div>
+             
+              ))
+              }
             </ol>
           </div>
 

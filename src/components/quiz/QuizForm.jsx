@@ -5,11 +5,11 @@ const QuizForm = ({ currentIndex, questions, selectedOption, handleOptionChange 
     <p>Q{currentIndex + 1}. {questions[currentIndex].question}</p>
 
     {questions[currentIndex].q_img && (
-      <img src={`data:image/${questions[currentIndex].q_img_type};base64,${questions[currentIndex].q_img}`} alt={`Q${currentIndex + 1} Image`} style={{ maxWidth: '200px',maxHeight:'200px' }} />
+      <img src={`data:image/${questions[currentIndex].q_img_type};base64,${questions[currentIndex].q_img}`} alt={`Q${currentIndex + 1} Image`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
     )}
 
     
-    <p style={{ margin: '20px' }}>{questions[currentIndex].q_value}</p>
+<div style={{ whiteSpace: 'pre-line', margin: '20px' }}>{questions[currentIndex].q_value}</div>
 
     {['A', 'B', 'C', 'D'].map((optionKey) => (
       <div key={optionKey}>
@@ -22,12 +22,12 @@ const QuizForm = ({ currentIndex, questions, selectedOption, handleOptionChange 
           onChange={handleOptionChange}
         />
         <label htmlFor={`option${optionKey}`}>
-          {optionKey}. 
+          {optionKey}.&nbsp; 
           {questions[currentIndex][`${optionKey.toLowerCase()}_img`] && (
             <img
               src={`data:image/${questions[currentIndex][`${optionKey.toLowerCase()}_img_type`]};base64,${questions[currentIndex][`${optionKey.toLowerCase()}_img`]}` }
               alt={`${optionKey} Option`}
-              style={{ maxWidth: '200px',maxHeight:'200px' }}
+              style={{ maxWidth: '100px',maxHeight:'100px' }}
             />
           )}
           {questions[currentIndex][optionKey.toLowerCase()]}

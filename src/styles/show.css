@@ -1,35 +1,123 @@
 .container img {
-    height: 150px;
-    margin :2%;
+    width: 90px;
     display: inline;
 }
 
-ol{
- flex-direction: column;
- list-style-type: decimal;
-padding-left: 0;
+.rounded-circle {
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: #04AA6D;
+  position: relative;
+  width:80px;
+  float: left;
 }
 
-ol a{
-  float: right;
+ol li{
+  list-style: none;
+}
+
+ol .btn{
+  margin: 0 0.3% 0 0.3%;
+  width: auto;
 }
 
 .modal-header{
     flex-direction: column;
    align-items: center;
+
+}
+
+.modal-body{
+  margin-bottom: -20px;
+}
+
+.modal-body ol{
+  padding-left: 0;
+}
+
+.modal-body li {
+  display: inline;
 }
 
 .titlediv {
   margin-top: 3vh;
   padding: 2%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 15px;
   transition: 0.2s ease-in-out ;
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+}
+
+.flexing1{
+  width: 60%;
+  float: left;
+  margin-top: 17px;
+}
+
+.flexing2{
+  width:40%;
+  margin-top: 10px;
+  float: right;
+  white-space: nowrap;
+  text-align: end;
+}
+
+.wrapper:first-child{
+  margin-top: -10px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgb(213, 213, 215);
+}
+
+.wrapper:last-child {
+  border: none;
+}
+
+@media screen and (max-width: 475px){
+  .flexing1{
+    margin-top: 5px;
+    float: none;
+    background-color: transparent;
+  }
+
+  .flexing2 {
+    margin-bottom: 1px;
+    float: none;
+  }
+
+  .wrapper {
+    font-size: 15px;
+  }
+
+  li.mb-2{
+    background-color: white;
+  }
+
+  .wrapper .btn {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .titlediv {
+    margin-top: 2vh;
+    padding: 2%;
+    transition: 0.2s ease-in-out ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container img {
+    height: 50px;
+    display: none;
+
+}
 }
 
 .ff{
@@ -68,14 +156,15 @@ ol a{
     list-style-type: none;
     padding: 0;
     gap: 20px;
+    margin-bottom: 105px;
   }
 
   .bodydiv li{
     margin-top: 3vh;
     padding: 2%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
     transition: 0.2s ease-in-out ;
     background-color: white;
     color: black;
+
   }

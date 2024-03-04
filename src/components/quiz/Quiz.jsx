@@ -27,11 +27,12 @@ useEffect(() => {
       // Dynamically generate the fetch URL based on the table name
       const response = await fetch(`http://localhost:3001/${dbName}/${tableName}`);
       const result = await response.json();
-      setQuestions(result);
+      setQuestions(result);console.log(result);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
+
 
     fetchData();
 

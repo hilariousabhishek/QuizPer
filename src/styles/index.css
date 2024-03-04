@@ -2,25 +2,131 @@ body{
   background-color: #d3d3d3c5;
 }
 
+.titlediv{
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+}
 .container-fluid {
   padding: 0;
 }
 
+.marginClass {
+padding-top: 80px;
+}
+
 /* home css goes from here */
+
+.typing-demo {
+  width: 12ch;
+  animation: typing 2s steps(12), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.banner{
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 97.5vw;
+  padding: 15px;
+  margin-top: 80px;
+}
+
+.left{
+  width:60%;
+  float: left;
+}
+
+.right{
+  width:40%;
+   float: right;
+}
+
+@media screen and (max-width: 576px) {
+  .right{
+    display: none;
+  }
+
+  .left{
+    width: 100%;
+  }
+
+  .banner{
+    height: 300px;
+  }
+
+  .ram {
+    width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .ram .card{
+    padding: 10px;
+    margin-top:10px;
+  }
+
+  .card img {
+    width: 50px;
+  }
+
+  .card-body{
+   padding: 0;
+  }
+
+  .row .card-title{
+    padding-top: 0;
+    margin-top: 15px;
+  }
+
+  
+}
+
 .row{
   margin: 0;
+  
 }
 
 .main {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  width: 97.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 350px;
 }
 
-.main h2 {
-  color: #0087ca;
+.notice{
+  padding:0 7% 0 7%;
+    overflow: scroll;
+
+}
+
+.banner h2 {
+  color: #10c482;
+}
+
+.main ul{
+  flex-direction: column;
+}
+
+.main li{
+  list-style: disc;
 }
 
 .main p {
@@ -29,41 +135,42 @@ body{
 }
 
 .ad{
-  width: 100%;
-  margin-top: 3vh;
+  max-height: 300px;
+  justify-content: center;
   align-items: center;
+  padding: 0;
+  width: 90%;
+  max-width: 300px;
 }
 
 .card{
   margin-top: 3vh;
-  padding: 2%;
+  padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 15px;
-  transition: 0.2s ease-in-out ;
+ 
 }
 
-.cardImg{
-  max-height: 125px;
-  position: relative;
-  z-index: 1;
-  transform: scale(1.5);
-  filter: brightness(0.4);
+
+.card-title{
+  padding-top: 26px;
 }
 
-.data:hover{
-  transform: scale(1.02);
+
+.card-body{
+  transition: 0.5s ease-in-out ;
+}
+
+.card-body:hover{
+  transform: scale(0.95); transition: 0.5s ease-in-out ;
 }
 
 .rounded-circle {
   border-width: 0.3rem;
 border-style: solid;
 border-color: #04AA6D;
-  margin-top: -6rem !important;
-  margin-bottom: 1rem;
   position: relative;
-  z-index: 2;
-  width:150px;
+  width:80px;
+  float: left;
 }
 
 a{
@@ -76,16 +183,15 @@ a:hover{
 }
 
 /* quiz css from here */
-ul{
+.correctAttempts>ul, .wrongAnswer>ul, .unattemptedQuestions>ul{
   padding-left: 0px;
 }
 
-li {
+.correctAttempts li, .wrongAnswer li, .unattemptedQuestions li{
   font-size: 20px;
   list-style: none;
   margin: 0;
 }
-
 
 
 .mybtn{ 
@@ -174,4 +280,9 @@ button{
 .completeAnalysis div ul{
   display: flex;
   flex-direction: column;
+}
+
+.custom-link:hover{
+  color: #0087ca;;
+  text-decoration: none;
 }

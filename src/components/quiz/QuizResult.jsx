@@ -48,144 +48,144 @@ const QuizResult = ({ score, wrongAnswers, questions, unattemptedQuestions }) =>
         </button>
 
         {correctAttempts.length > 0 && (
-  <div>
-    <h3 style={{ textAlign: 'center' }}>Correct</h3>
-    <hr />
-    <ul>
-      {correctAttempts.map((question) => (
-        <li key={question.id}>
-          <strong>{`Q${question.qid}. ${question.question}`}
-            <br />
-            {question.q_value !== null && (
-              <span>{`${question.q_value} `}</span>
-            )}</strong>
-
-          {question.q_img && (
-            <div>
-              <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`}  style={{ maxWidth: '200px',maxHeight:'200px' }}/>
-            </div>
-          )}
-
-          {["A", "B", "C", "D"].map((optionKey) => (
-            <div key={optionKey}>
-              <input
-                type="radio"
-                disabled
-                checked={question.ans === optionKey}
-              />
-              <label className="resCol">
-                {optionKey}. { }
-                {question[`${optionKey.toLowerCase()}_img`] && (
-                  <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`} 
-                  style={{ maxWidth: '200px',maxHeight:'200px' }}/>
-                )}
-                {question[`${optionKey.toLowerCase()}`]}
-              </label>
-            </div>
-          ))}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
-
-       
-{wrongAnswers.length > 0 && (
-  <div>
-    <h3 style={{ textAlign: 'center' }}>Incorrect</h3>
-    <hr />
-    <ul>
-      {wrongAnswers.map((wrongAnswer) => {
-        const question = questions.find(q => q.question === wrongAnswer.question);
-        const correctAnswer = question.ans;
-
-        return (
-          <li key={question.id} className="wrong">
-            <strong>{`Q${question.qid}. ${question.question}`}
-              <br />
-              {question.q_value !== null && (
-                <span>{`${question.q_value} `}</span>
-              )}</strong>
-            <br />
-
-            {question.q_img && (
-              <div>
-                <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`} style={{ maxWidth: '200px', maxHeight: '200px' }} />
-              </div>
-            )}
-
-            {["A", "B", "C", "D"].map((optionKey) => (
-              <div key={optionKey}>
-                <input
-                  type="radio"
-                  disabled
-                  checked={wrongAnswer.userAnswer === optionKey}
-                />
-                <label className="resCol">
-                  {optionKey}.{" "}
-                  {question[`${optionKey.toLowerCase()}_img`] && (
-                    <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`} style={{ maxWidth: '200px', maxHeight: '200px' }} />
-                  )}
-                  {question[`${optionKey.toLowerCase()}`]}
-                </label>
-              </div>
-            ))}
-            {`Correct Answer: ${correctAnswer}`}
+          <div className="correctAttempts">
+            <h3 style={{ textAlign: 'center' }}>Correct</h3>
             <hr />
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-)}
+            <ul>
+              {correctAttempts.map((question) => (
+                <li key={question.id}>
+                  {`Q${question.qid}. ${question.question}`}
+                    <br />
+                    {question.q_value !== null && (
+                      <span>{`${question.q_value} `}</span>
+                    )}
 
-{unattemptedQuestions.length > 0 && (
-  <div>
-    <h3 style={{ textAlign: 'center' }}>Unattempted</h3>
-    <hr />
-    <ul>
-      {unattemptedQuestions.map((unattemptedQuestion) => {
-        const question = questions.find(q => q.question === unattemptedQuestion.question);
-        const correctAnswer = question.ans;
-
-        return (
-          <li key={question.id} className="Un">
-            <strong>{`Q${question.qid}. ${question.question}`}
-              <br />
-              {question.q_value !== null && (
-                <span>{`${question.q_value} `}</span>
-              )}</strong>
-            <br />
-
-            {question.q_img && (
-              <div>
-                <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`} style={{ maxWidth: '200px', maxHeight: '200px' }} />
-              </div>
-            )}
-
-            {["A", "B", "C", "D"].map((optionKey) => (
-              <div key={optionKey}>
-                <input
-                  type="radio"
-                  disabled
-                />
-                <label className="resCol">
-                  {optionKey}.{" "}
-                  {question[`${optionKey.toLowerCase()}_img`] && (
-                    <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`} style={{ maxWidth: '200px', maxHeight: '200px' }} />
+                  {question.q_img && (
+                    <div>
+                      <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                    </div>
                   )}
-                  {question[`${optionKey.toLowerCase()}`]}
-                </label>
-              </div>
-            ))}
-            {`Correct Answer: ${correctAnswer}`}
+
+                  {["A", "B", "C", "D"].map((optionKey) => (
+                    <div key={optionKey}>
+                      <input
+                        type="radio"
+                        disabled
+                        checked={question.ans === optionKey}
+                      />
+                      <label className="resCol">
+                        {optionKey}. { }
+                        {question[`${optionKey.toLowerCase()}_img`] && (
+                          <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`}
+                              style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                        )}
+                        {question[`${optionKey.toLowerCase()}`]}
+                      </label>
+                    </div>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+
+        {wrongAnswers.length > 0 && (
+          <div>
+            <h3 style={{ textAlign: 'center' }}>Incorrect</h3>
             <hr />
-          </li>
-        );
-      })}
-    </ul>
-  </div>
-)}
+            <ul className="wrongAnswer">
+              {wrongAnswers.map((wrongAnswer) => {
+                const question = questions.find(q => q.question === wrongAnswer.question);
+                const correctAnswer = question.ans;
+
+                return (
+                  <li key={question.id} className="wrong">
+                    {`Q${question.qid}. ${question.question}`}
+                      <br />
+                      {question.q_value !== null && (
+                        <span>{`${question.q_value} `}</span>
+                      )}
+                    <br />
+
+                    {question.q_img && (
+                      <div>
+                        <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                      </div>
+                    )}
+
+                    {["A", "B", "C", "D"].map((optionKey) => (
+                      <div key={optionKey}>
+                        <input
+                          type="radio"
+                          disabled
+                          checked={wrongAnswer.userAnswer === optionKey}
+                        />
+                        <label className="resCol">
+                          {optionKey}.{" "}
+                          {question[`${optionKey.toLowerCase()}_img`] && (
+                            <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                          )}
+                          {question[`${optionKey.toLowerCase()}`]}
+                        </label>
+                      </div>
+                    ))}
+                    {`Correct Answer: ${correctAnswer}`}
+                    <hr />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+
+        {unattemptedQuestions.length > 0 && (
+          <div>
+            <h3 style={{ textAlign: 'center' }}>Unattempted</h3>
+            <hr />
+            <ul className="unattemptedQuestions">
+              {unattemptedQuestions.map((unattemptedQuestion) => {
+                const question = questions.find(q => q.question === unattemptedQuestion.question);
+                const correctAnswer = question.ans;
+
+                return (
+                  <li key={question.id} className="Un">
+                    {`Q${question.qid}. ${question.question}`}
+                      <br />
+                      {question.q_value !== null && (
+                        <span>{`${question.q_value} `}</span>
+                      )}
+                    <br />
+
+                    {question.q_img && (
+                      <div>
+                        <img src={`data:image;base64,${question.q_img}`} alt={`Question ${question.qid}`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                      </div>
+                    )}
+
+                    {["A", "B", "C", "D"].map((optionKey) => (
+                      <div key={optionKey}>
+                        <input
+                          type="radio"
+                          disabled
+                        />
+                        <label className="resCol">
+                          {optionKey}.{" "}
+                          {question[`${optionKey.toLowerCase()}_img`] && (
+                            <img src={`data:image;base64,${question[`${optionKey.toLowerCase()}_img`]}`} alt={`Option ${optionKey}`}   style={{ maxWidth: '100px',maxHeight:'100px' }} />
+                          )}
+                          {question[`${optionKey.toLowerCase()}`]}
+                        </label>
+                      </div>
+                    ))}
+                    {`Correct Answer: ${correctAnswer}`}
+                    <hr />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
 
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 //import statements
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -17,12 +19,14 @@ function App() {
       <Routes basename = "/">
 
         <Route path='/' element={<Home />} />
-        <Route path='/Quiz/:dbName/:attemptLink' element={<Quiz/>} />
+        <Route path='/:dbName/:attemptLink' element={<Quiz/>} />
         <Route path='/QuizResult' element={<QuizResult />} />
         <Route path="*" element= {<Error/>} />
         {RRBRoute} { SSCRoute }
         
       </Routes>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }

@@ -18,17 +18,24 @@ const RRB_ALP = () => {
 
   return (
     <div className="modal fade rrb_alp" tabIndex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-dialog modal-xl modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">RRB ALP</h5>
+            <h4 className="modal-title" id="exampleModalLabel">RRB ALP</h4>
           </div>
 
           <div className="modal-body">
-            <ol className='y2023'>
+            <ol>
+
               {examPapers.map((paper, index) => (
-                <li key={index}>
+              <div className="wrapper">
+                <li key={index} className='mb-2 '>
+
+                <div className='flexing1'>
                   {paper.title}
+                </div>
+
+                <div className='flexing2'>
                   <Link
                     to={paper.downloadLink}
                     className="btn btn-outline-primary"
@@ -45,8 +52,9 @@ const RRB_ALP = () => {
                   >
                     Attempt
                   </Link>
-                  <hr />
+                  </div>
                 </li>
+                </div>
               ))}
             </ol>
           </div>
