@@ -114,8 +114,8 @@ const Home = () => {
           <h3 className='text-center mb-3'> <u>Notice</u></h3>
           <div className='notice'>
           <ul>
-          <li>SSC JE Civil 2023 question from all the shift is availabe now</li>
-          <li>RRB Je Civil 2023 questions availabe</li>
+          <li>Launching soon </li>
+          <li>stay tuned for updates</li>
           </ul>
           
         </div>
