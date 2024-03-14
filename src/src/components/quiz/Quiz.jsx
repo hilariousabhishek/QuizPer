@@ -25,7 +25,7 @@ useEffect(() => {
       const tableName = window.location.pathname.split('/')[2] || 'default_table';
 
       // Dynamically generate the fetch URL based on the table name
-      const response = await fetch(`http://localhost:3001/${dbName}/${tableName}`);
+      const response = await fetch(`http://gkexams.in.beatbuzz.tech/${dbName}/${tableName}`);
       const result = await response.json();
       setQuestions(result);
     } catch (error) {
