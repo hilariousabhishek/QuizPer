@@ -11,7 +11,7 @@ const SSC_JE = () => {
     },
     {
       title: "SSC JE Pre 16 OCT morning paper 2022",
-      attemptLink: `/${db}/ssc_je_civil_pre_16_11_2022_s1`,
+      attemptLink: `/${db}/pre_16_11_2022_S1`,
       downloadLink: "/download"
     },
     // Add more papers as needed
